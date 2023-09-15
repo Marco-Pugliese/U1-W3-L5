@@ -416,6 +416,8 @@ console.log("Esercizio 11: ");
 const deleteProp = (obj, str) => {
   const selected = movies[obj][str];
   console.log(selected);
+  // delete movies[obj][str]; non posso disattivarlo sennò non mi legge un'altra funzione.. però avrei fatto cosi
+  console.log(movies);
 };
 deleteProp(3, "Title");
 
@@ -509,7 +511,7 @@ const unmatch = [];
 console.log("Esercizio 18: ");
 const searchAndDivide = (str) => {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].Title.includes(str)) {
+    if (movies[i].Title.toLowerCase().includes(str.toLowerCase())) {
       match.push(movies[i]);
     } else {
       unmatch.push(movies[i]);
@@ -517,7 +519,7 @@ const searchAndDivide = (str) => {
   }
   console.log(match, unmatch);
 };
-searchAndDivide("Avengers");
+searchAndDivide("loRD");
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
